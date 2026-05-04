@@ -5,6 +5,8 @@ edition = "2021"
 
 [dependencies]
 ink = { version = "4.2.0", default-features = false }
+scale = { package = "parity-scale-codec", version = "3", default-features = false, features = ["derive"] }
+scale-info = { version = "2", default-features = false, features = ["derive"] }
 
 [lib]
 name = "ghostlayer"
@@ -13,4 +15,8 @@ crate-type = ["cdylib"]
 
 [features]
 default = ["std"]
-std = ["ink/std"]
+std = [
+    "ink/std",
+    "scale/std",
+    "scale-info/std"
+]
