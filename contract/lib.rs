@@ -4,7 +4,7 @@
 mod ghostlayer {
     use ink::storage::Mapping;
 
-    #[derive(scale::Encode, scale::Decode, Clone, Default)]
+    #[derive(scale::Encode, scale::Decode, Clone, Debug, PartialEq, Eq)]
     #[cfg_attr(feature = "std", derive(scale_info::TypeInfo))]
     pub struct ScanResult {
         score: u8,
